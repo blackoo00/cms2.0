@@ -91,6 +91,12 @@ export default [
             authority: ['admin'],
             component: './Forms/AdvancedForm',
           },
+          {
+            path: '/form/pdetail/:id',
+            name: 'pdetail',
+            hideInMenu: true,
+            component: './Forms/ProdForm',
+          },
         ],
       },
       // list
