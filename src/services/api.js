@@ -74,8 +74,14 @@ export async function queryFakeList(params) {
    pgae:页面 key:关键词 cid:分类ID
 */
 export async function queryProdList(params) {
-  return request(`/api/prod_list?${stringify(params)}`);
-  // return request(`http://a.cn/api/cms/prod/list?${stringify(params)}`);
+  // return request(`/api/prod_list?${stringify(params)}`);
+  return request(`http://a.cn/api/cms/prod/list?${stringify(params)}`);
+}
+/* 商品详情
+   id
+*/
+export async function queryProdDetail(params){
+  return request(`http://a.cn/api/cms/prod/detail/${params.id}`);
 }
 /* 获取商品列表
    pgae:页面 key:关键词
@@ -126,10 +132,10 @@ export async function updateFakeList(params) {
 }
 /* 用户登录 */
 export async function fakeAccountLogin(params) {
-  // params.ac = params.userName
-  // params.se = params.password
-  return request('/api/login/account', {
-    // return request('http://a.cn/api/cms/token/app', {
+  params.ac = params.userName
+  params.se = params.password
+  // return request('/api/login/account', {
+    return request('http://a.cn/api/cms/token/app', {
     method: 'POST',
     data: params,
   });

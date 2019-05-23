@@ -22,8 +22,8 @@ class ProdList extends PureComponent {
     dispatch({
       type: 'list/fetchProds',
       payload: {
-        page: 4,
-        cid: 1,
+        page: 1,
+        cid: 0,
         key: '',
       },
     });
